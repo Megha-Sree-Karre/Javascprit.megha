@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change DOM Element Every 2 Seconds</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #dynamicContent {
+            font-size: 24px;
+            color: #4CAF50;
+            border: 2px solid #ccc;
+            padding: 30px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<h1>Change DOM Element Example</h1>
+    <div id="dynamicContent">Initial Content</div>
+
+    <script>
+        const messages = [
+            "Hello, World!",
+            "Welcome to this website!",
+            "Enjoy your stay!",
+            "Have a great day!",
+            "You are doing great!"
+        ];
+
+        let index = 0; // Start with the first message
+
+        // Function to change the content of the element
+        function changeContent() {
+            document.getElementById('dynamicContent').innerText = messages[index];
+            index = (index + 1) % messages.length; // Move to the next message
+        }
+
+        // Change the content every 2 seconds
+        setInterval(changeContent, 2000);
+    </script>
+
+</body>
+</html>
